@@ -13,6 +13,9 @@ remember to edit .env file:
 
  - JWT_PASSPHRASE used generating SSH keys
  - database configuration
+ 
+> Only the first time use `./bin/console doctrine:database:create --env=test` before run `make`.
+> After first time, run `make` command to build and test the walking skeleton.
 
 To test that everything is working
 
