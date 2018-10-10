@@ -1,5 +1,7 @@
 # sf4-boilerplate
 
+## Install
+
 ``` bash
 $ git clone git@github.com:studiomado/sf4-boilerplate PROJECT
 $ cd PROJECT
@@ -9,29 +11,32 @@ $ openssl rsa -pubout -in config/jwt/private.pem -out config/jwt/public.pem
 $ composer install
 ```
 
-remember to edit .env file:
+## Edit .env file:
 
  - JWT_PASSPHRASE used generating SSH keys
  - database configuration
- 
-> Only the first time use `./bin/console doctrine:database:create --env=test` before run `make`.
-> After first time, run `make` command to build and test the walking skeleton.
 
-To test that everything is working
+## Create test database
+
+```bash
+./bin/console doctrine:database:create --env=test
+```
+
+## Run tests
 
 ```bash
 $ make
 ```
 
-Login with
-
- - username: sensorario@example.com
- - password: password
-
-## server ...
-
-Remember to run server
+## Run server
 
 ```bash
  ./bin/console server:run
 ```
+
+## Try to login
+
+Login with
+
+ - username: sensorario@example.com
+ - password: password
