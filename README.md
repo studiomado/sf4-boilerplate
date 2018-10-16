@@ -5,10 +5,8 @@
 ``` bash
 $ git clone git@github.com:studiomado/sf4-boilerplate PROJECT
 $ cd PROJECT
-$ mkdir -p config/jwt
-$ openssl genrsa -out config/jwt/private.pem -aes256 4096
-$ openssl rsa -pubout -in config/jwt/private.pem -out config/jwt/public.pem
-$ composer install
+$ export JWT_PASSPHRASE=2d2e84d5385e7462590ec0bf73bfabb7
+$ make install
 ```
 
 ## Edit .env file:
@@ -19,19 +17,35 @@ $ composer install
 ## Create test database
 
 ```bash
-./bin/console doctrine:database:create --env=test
+$ make create_db
+```
+
+or, if you want to use a database from scratch with docker:
+
+```bash
+$ export DB_NAME=db_name
+$ export DB_USER=db_user
+$ export DB_PASSWORD=db_password
+$ export MYSQL_ROOT=root
+$ make create_db_docker
+```
+
+then
+
+```bash
+$ make build_db
 ```
 
 ## Run tests
 
 ```bash
-$ make
+$ make unitest
 ```
 
 ## Run server
 
 ```bash
- ./bin/console server:run
+$ make server
 ```
 
 ## Try to login
