@@ -2,7 +2,7 @@
     "type": "project",
     "license": "proprietary",
     "authors": [
-        {"name": "Simone Gentili", "email": "sensorario@gail.com"}
+        {"name": "Simone Gentili", "email": "sensorario@gmail.com"}
     ],
     "require": {
         "php": "^7.1.3",
